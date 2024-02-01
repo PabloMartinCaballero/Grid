@@ -1,0 +1,113 @@
+.Grid-container{
+    display: grid;
+    gap: 20px;
+
+    /*
+
+        CREACIÓN DE PLANTILLA
+
+        Creación de plantilla grid mediante unidades absolutas en Px
+        Si sobrepaso el tamaño de mi grilla los elementos se van a desbordar de la cuadricula, en este caso se implementa 
+
+        grid-template-columns: 500px 500px;
+        grid-template-rows: 200px 300px 300px;
+
+        LA PLANTILLA GRID :
+        
+        Para que la plantilla grid ocupe todo el espacio disponible de la pantalla utilizamos 
+        min-heigth : 100vh (altura minima el 100% del view port)
+
+        CENTRAR TODOS LOS ELEMENTOS DE LA PLANTILLA:
+
+        place content : center = justifi content aling content : center
+
+
+    */
+
+    /*
+        FR
+
+        Creación de plantilla grid mediante unidades relativas de fracción 
+        
+        grid-template-columns: 1fr 4fr 1fr; 100 / 6 --> 1fr
+        grid-template-rows: 2fr 5fr 1fr;
+        grid-auto-rows : 200px (cuando me tenga que generar una fila nueva, por que ya no entran los componentes en la grilla, genera nuevas filas de 200px como le indicamos)
+
+    */
+
+    /*
+        AUTO
+
+        auto : va a rellenar todo el espacio que me sobra, en este caso la columna izquierda, ocupara todo el espacio sobrante, dependiendo de la cantidad de contenido que contenga dentro
+
+        grid-template-columns : auto 20px 200px
+
+        grid-auto-rows : 500px (va a crear filas de 500px por cada elemento en la grilla)
+
+    */
+
+
+    /*
+
+        REPEAT
+
+        Creación de plantilla utilizando repeat (cantidad de veces que se va a repetir, tamaño de los elementos)
+        
+        grid-template-columns: repeat(2,400px) 1fr;
+        grid-template-rows: repeat(3,200px);
+
+        grid-template-colums : repeat(2, 25px 100px) --> va a crear columnas de 25 y 100px sucesivamente 
+    
+    */
+
+    /*
+
+        MINMAX
+
+        minmax(Tamaño minimo al que se redimencionara el elemento, tamaño normal del elemento)
+    
+                                (siempre que la columna sea mayor a 100px se va a comportar como 1fr)
+        grid-template-columns : minmax(100px 1fr) 1fr 1fr
+
+
+        grid-template-columns: repeat(2, minmax(200px, 600px));
+        grid-template-rows: repeat(3,minmax(300px, 500px));
+
+
+
+    */
+
+
+    /**/
+
+    /*  
+        FIT Y FILL
+
+        Fit va a ajustar todo el contenido utilizando todo el espacio disponible, redimensionando estos
+
+        Fill = Es decir, si utilizamos repeat(auto-fill, minmax(300px, 1fr), el navegador se va a encargar de que los elementos hijos con el tamaño mínimo quepan en la primera fila, dejando un espacio vacio, si se utiliza fit, los elementos se van a redimensionar para ocupar todo el espacio disponible
+    
+    */
+
+
+
+    /*
+        ITEMS Y CONTENT
+
+        items = el contenido de las celdas 
+
+        content = mueve toda la cuadrilla en el espacio disponibles
+
+    */
+
+
+    justify-items: start;
+
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    background-color: aquamarine;
+}
+
+.grid-chill{
+    border: 2px solid black;
+}
